@@ -39,7 +39,7 @@ It is a general-purpose pruning-and-recovering framework, capable of being easil
 
 ## 🐳 Download pretrained models
 
-🔥HoT🔥's pretrained models can be found in [here](https://drive.google.com/drive/folders/1Mr00vyPXMnAX2lA4r1r2L3nR1bR4wvoN?usp=drive_link), please download it and put it in the './checkpoint/pretrained' directory. 
+🔥HoT🔥's pretrained models can be found in [here](https://drive.google.com/drive/folders/1Mr00vyPXMnAX2lA4r1r2L3nR1bR4wvoN?usp=sharing), please download it and put it in the './checkpoint/pretrained' directory. 
   
 ## 🤖 Dataset setup
 
