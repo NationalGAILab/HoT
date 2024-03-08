@@ -8,15 +8,6 @@ class Model(nn.Module):
     def __init__(self, args):
         super().__init__()
 
-        ## MHG
-        self.norm_1 = nn.LayerNorm(args.frames)
-        self.norm_2 = nn.LayerNorm(args.frames)
-        self.norm_3 = nn.LayerNorm(args.frames)
-
-        self.Transformer_encoder_1 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
-        self.Transformer_encoder_2 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
-        self.Transformer_encoder_3 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
-
         ## Embedding
         if args.frames > 27:
             self.embedding_1 = nn.Conv1d(2*args.n_joints, args.channel, kernel_size=1)
@@ -52,6 +43,15 @@ class Model(nn.Module):
             nn.BatchNorm1d(args.channel*3, momentum=0.1),
             nn.Conv1d(args.channel*3, 3*args.out_joints, kernel_size=1)
         )
+
+        ## MHG
+        self.norm_1 = nn.LayerNorm(args.frames)
+        self.norm_2 = nn.LayerNorm(args.frames)
+        self.norm_3 = nn.LayerNorm(args.frames)
+
+        self.Transformer_encoder_1 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
+        self.Transformer_encoder_2 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
+        self.Transformer_encoder_3 = Transformer_encoder(4, args.frames, args.frames*2, length=2*args.n_joints, h=9)
 
     def forward(self, x, index=None):
         B, F, J, C = x.shape
