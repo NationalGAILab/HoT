@@ -90,10 +90,10 @@ python main_mixste.py --batch_size 4 --frames 243 --stride 243 --model mixste.ho
 python main_mixste_tpc.py --batch_size 4 --frames 243 --stride 243 --model mixste.tpc_mixste --token_num 61 --layer_index 7
 
 ## MHFormer
-python main_mhformer.py --batch_size 128 --nepoch 15 --lr 1e-3 --lr_decay_epoch 5 --lr_decay 0.95 --frames 351 --stride 1 --model mhformer.mhformer
+python main_mhformer.py --batch_size 128 --nepoch 20 --lr 1e-3 --lr_decay_epoch 5 --lr_decay 0.95 --frames 351 --stride 1 --model mhformer.mhformer
 
 ## TPC w. MHFormer
-python main_mhformer_tpc.py --batch_size 210 --nepoch 15 --lr 1e-3 --lr_decay_epoch 5 --lr_decay 0.95 --frames 351 --stride 1 --model mhformer.tpc_mhformer --token_num 117 --layer_index 1
+python main_mhformer_tpc.py --batch_size 210 --nepoch 20 --lr 1e-3 --lr_decay_epoch 5 --lr_decay 0.95 --frames 351 --stride 1 --model mhformer.tpc_mhformer --token_num 117 --layer_index 1
 ```
 
 ## 🤗 Demo
