@@ -243,7 +243,6 @@ def get_pose3D(video_path, output_dir, fix_z):
         rot =  [0.1407056450843811, -0.1500701755285263, -0.755240797996521, 0.6223280429840088]
         rot = np.array(rot, dtype='float32')
         post_out = camera_to_world(post_out, R=rot, t=0)
-        post_out[:, :, 2] -= np.min(post_out[:, 2])
 
         ## 2D
         for j in range(low_index, high_index):
@@ -266,6 +265,7 @@ def get_pose3D(video_path, output_dir, fix_z):
             gs.update(wspace=-0.00, hspace=0.05) 
             ax = plt.subplot(gs[0], projection='3d')
 
+            post_out[jj, :, 2] -= np.min(post_out[jj, :, 2])
             show3Dpose(post_out[jj], ax, fix_z)
 
             output_dir_3D = output_dir +'pose3D/'
