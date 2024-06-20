@@ -117,6 +117,7 @@ If you find our work useful in your research, please consider citing:
       title={Hourglass Tokenizer for Efficient Transformer-Based 3D Human Pose Estimation},
       author={Li, Wenhao and Liu, Mengyuan and Liu, Hong and Wang, Pichao and Cai, Jialun and Sebe, Nicu},
       booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      pages={604--613},
       year={2024}
     }
 
